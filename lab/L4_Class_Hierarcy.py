@@ -34,12 +34,15 @@ class Triangle(Shape):
         return self.a + self.b + self.c
 
     def area(self):
-        s = (a + b + c) / 2
-        return math.sqrt(s * (s-a) * (s-b) * (s-c))
-
+        s = (self.a + self.b + self.c) / 2
+        return math.sqrt(s * (s-self.a) * (s-self.b) * (s-self.c))
 
 
 if __name__ == '__main__':
     r = Rectangle(4, 5)
     print(r.area())
     print(r.perimeter())
+
+    t = Triangle(3,4,5)
+    print(t.area())
+    print(t.perimeter())
