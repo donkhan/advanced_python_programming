@@ -18,15 +18,12 @@ def word_count():
         for line in lines:
             tokens = line.split()
             for token in tokens:
-                if token in d:
-                    d[token] = d[token] + 1
-                else:
-                    d[token] = 1
+                d[token] = d.get(token, 0) + 1
     for key in d.keys():
         print(key + " = " + str(d[key]))
 
 
 if __name__ == '__main__':
-    print(sum_elements([1, 2, 3]))
-    print(factorial(4))
+    #print(sum_elements([1, 2, 3]))
+    #print(factorial(4))
     word_count()
