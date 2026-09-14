@@ -79,5 +79,42 @@ def geocode():
     return jsonify(result)
 
 
+@app.route("/v2/country/<country>/indicator/SP.POP.TOTL")
+def population(country):
+
+    year = request.args.get("date")
+
+    result = [
+        {
+            "page": 1,
+            "pages": 1,
+            "per_page": 50,
+            "total": 1,
+            "sourceid": "2",
+            "lastupdated": "2026-07-13"
+        },
+        [
+            {
+                "indicator": {
+                    "id": "SP.POP.TOTL",
+                    "value": "Population, total"
+                },
+                "country": {
+                    "id": "IN",
+                    "value": "India"
+                },
+                "countryiso3code": country,
+                "date": str(year),
+                "value": random.randint(100000000, 1500000000),
+                "unit": "",
+                "obs_status": "",
+                "decimal": 0
+            }
+        ]
+    ]
+
+    return jsonify(result)
+
+
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000, debug=True)
