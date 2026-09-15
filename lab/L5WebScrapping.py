@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 url = "https://quotes.toscrape.com/"
+url = "http://127.0.0.1:5000/quotes"
 response = requests.get(url)
 soup = BeautifulSoup(response.text, "html.parser")
 quotes = soup.find_all("div", class_="quote")

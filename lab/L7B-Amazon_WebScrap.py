@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 
 url = "https://www.amazon.in/s?k=laptop"
+url =  "http://127.0.0.1:5000/products"
 
 headers = {
     "User-Agent": "Mozilla/5.0",
