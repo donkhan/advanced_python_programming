@@ -4,6 +4,13 @@ client = MongoClient("mongodb+srv://pu:pp@cluster0.vdvk1xm.mongodb.net/?appName=
 database = client["sample_fruit"]
 collection = database["fruits"]
 
+collection.delete_one({"Id":"test"})
+collection.insert_one({"_id":"test","name": "grapes", "taste": "sweet"})
+print(collection.find_one({"name":"grapes"}))
+collection.insert_one({"_id":"test","name": "grapes", "taste": "very sweet"}, {"upsert": "true"})
+print(collection.find_one({"name":"grapes"}))
+
+
 #collection.insert_many([
     #   { "_id": 1, "name": "apples", "qty": 5, "rating": 3, "color": "red", "type": ["fuji", "honeycrisp"] },
     #  { "_id": 2, "name": "bananas", "qty": 7, "rating": 4, "color": "yellow", "type": ["cavendish"] },
