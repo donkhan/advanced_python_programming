@@ -7,12 +7,12 @@ listings = db.get_collection("listingsAndReviews")
 l = listings.find({}, {"name": 1, "_id" : 0 }).limit(5)
 
 l = listings.find({"property_type": "Apartment"})
-l = listings.find({"accommodates" : { "$gt" : 2}})
-l = listings.find({"number_of_reviews" : { "$gt" : 100}})
+l = listings.find({"accommodates": {"$gt": 2}})
+l = listings.find({"number_of_reviews": {"$gt": 100}})
 l = listings.find({
         "$and":[
             {"property_type": "Apartment"},
-            {"accommodates" : { "$gte" : 4}}
+            {"accommodates": {"$gte": 4}}
         ]
     }
 )
