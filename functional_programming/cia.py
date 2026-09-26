@@ -10,6 +10,7 @@ b *= 10
 print(a)
 print(b)
 
+
 # 2
 df = pd.DataFrame({
     "dept": ["CS", "AI", "CS", "AI"],
@@ -30,11 +31,10 @@ x = [1, 2, 3, 4]
 y = list(accumulate(x, lambda a, b: a + 2*b))
 print(y)
 
+
 # 5
 x = [2, 3, 4, 5]
 r = reduce(lambda a, b: a + b if b % 2 else a * b, x, 1)
-
-
 
 # 6
 x = [2, 4, 6, 8]
@@ -43,8 +43,6 @@ y[1] = 99
 
 print(x)
 print(y)
-
-
 
 # 7
 x = [2, 4, 6, 8]
@@ -215,8 +213,6 @@ print("Q26")
 x = [2,3,4,5]
 r = reduce(lambda a,b:a-b if b%2 else a+b,x,10)
 print(r)
-print("Q27")
-
 
 
 # 28
@@ -287,14 +283,17 @@ a = np.array([1,2,3,4])
 b = a[1:3]
 c = list(map(lambda x:x*2,b))
 b[0] = 10
+
 print(a)
 print(c)
+
 
 # 37
 a = np.array([1,2,3,4])
 b = a[1:3]
 c = list(map(lambda x:x*2,b))
 b[0] = 10
+print("Q37")
 print(a)
 print(c)
 
@@ -314,6 +313,7 @@ x = [1,2,3,4]
 y = list(map(lambda n:n+1,x))
 z = list(filter(lambda n:n%2==0,y))
 x[0] = 10
+print("Q39")
 print(y)
 print(z)
 
@@ -339,20 +339,23 @@ f = lambda n:n*2
 g = lambda n:n+3
 y = list(map(g,map(f,filter(lambda n:n%2,x))))
 print(y)
-exit(1)
+
 
 # 43
 x = [1,2,3,4,5,6]
 f = lambda a,b:a+b if b%2 else a*b
 r = reduce(f,x,1)
-print(r)
+print("Q43")
+print( r)
 
 # 44
 x = [1,2,3,4,5]
 f = lambda n:n*n
 g = lambda n:n-1
 y = list(map(g,filter(lambda n:n>10,map(f,x))))
+print("Q44")
 print(y)
+
 
 # 45
 # Show Documentation
@@ -403,6 +406,7 @@ print(z)
 print(r)
 
 
+
 # 52
 x = [1, 2, 3, 4, 5, 6]
 y = list(map(lambda n: n + 1, filter(lambda n: n % 2 == 0, x)))
@@ -416,6 +420,7 @@ y = list(map(lambda n: n * n, filter(lambda n: n % 2 == 1, x)))
 z = reduce(lambda a, b: a + b if b % 3 else a * b, y, 2)
 print(y)
 print(z)
+
 
 # 54
 p1 = np.poly1d([1, 2, 3])
